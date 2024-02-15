@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block heading %} Sentiment analysis {% endblock %}
+{% block content %}
+<body>
+    <h3> Please write a sentence: </h3>
+    <form action="/analysis" method="post">
+        <label for="input_sentence">Here:</label>
+        <input type="string" name="input_sentence" required>
+        <button type="submit">Get sentiment analysis</button>
+    </form>
+</body>
+</html>
+{% endblock %}

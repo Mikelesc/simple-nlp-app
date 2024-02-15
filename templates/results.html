@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block heading %} Sentiment analysis results for sentence: {% endblock %}
+{% block content %}
+<body>
+    {{ input_sentence }}
+    <ul>
+        {% for state, score in results.items() %}
+            <a href="{{ state }}">The sentence is {{ state }}</a> - Score: {{ score }}
+        {% endfor %}
+    </ul>
+</body>
+</html>
+{% endblock %}
