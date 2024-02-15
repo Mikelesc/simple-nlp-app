@@ -14,7 +14,7 @@ Learn how to deploy it using AWS. I know there are EC2 instances, Lambda functio
 The first step is to download this repo
 
 ```bash
-git clone https://github.com/Mikelesc/simple-nlp-app.git
+git clone https://github.com/miedc/simple-nlp-app.git
 ```
 
 Then, I recommend you install everything in a virtual environment. I use the included manager that comes with most Python versions: “venv”.
