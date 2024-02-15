@@ -34,4 +34,4 @@ def read_about(request: Request):
 
 if __name__ == "__main__":
     sentiment_model.load_model()
-    run(app, host="127.0.0.1", port=8000)
+    run(app, host="0.0.0.0", port=8000)
