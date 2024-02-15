@@ -7,9 +7,11 @@ from models import SentimentModel
 
 app = FastAPI()
 sentiment_model = SentimentModel()
+sentiment_model.load_model()
 templates = Jinja2Templates(directory="templates")
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
+@app.get("/home", response_class=HTMLResponse)
 @app.get("/", response_class=HTMLResponse)
 async def home(request: Request):
     return templates.TemplateResponse(
@@ -33,5 +35,4 @@ def read_about(request: Request):
 
 
 if __name__ == "__main__":
-    sentiment_model.load_model()
     run(app, host="0.0.0.0", port=8000)
