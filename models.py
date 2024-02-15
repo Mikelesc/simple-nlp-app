@@ -5,5 +5,5 @@ class SentimentModel():
     model = None
 
     def load_model(self):
-        model_name = "distilbert/distilbert-base-uncased-finetuned-sst-2-english"
-        self.model = pipeline(model = model_name)
+        model_name = "fgaim/tielectra-small-sentiment"
+        self.model = pipeline("sentiment-analysis", model = model_name)
