@@ -4,9 +4,12 @@ The purpose of this repository is to learn more about deploying a machine learni
 I built a simple sentiment analysis app using FastAPI and Jinja2. Actually most of the code comes from this repo: https://github.com/alexmolas/microsearch
 I just adapted it to use a HuggingFace model on the input.
 
+I got to deploy it in an EC2 instance! Had some trouble as the free t2.micro intance only has 1GB of RAM so we can't use big models and Pytorch has to be installed without caching.
+Also opening the ports and making it available on the public Internet needed a few shots but got it in the end.
+
 NEXT STEP:
 
-Learn how to deploy it using AWS. I know there are EC2 instances, Lambda functions, Kubernetes... I want to test them all!
+Learn more ways to serve it in AWS, probably using Lambda :)
 
 
 ## Getting started
