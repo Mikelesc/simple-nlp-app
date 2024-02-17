@@ -1,15 +1,14 @@
 # simple-nlp-app
 
 The purpose of this repository is to learn more about deploying a machine learning service in a public cloud provider.
-I built a simple sentiment analysis app using FastAPI and Jinja2. Actually most of the code comes from this repo: https://github.com/alexmolas/microsearch
-I just adapted it to use a HuggingFace model on the input.
+I built a simple sentiment analysis app using FastAPI and a HuggingFace basic model.
 
-I got to deploy it in an EC2 instance! Had some trouble as the free t2.micro intance only has 1GB of RAM so we can't use big models and Pytorch has to be installed without caching.
-Also opening the ports and making it available on the public Internet needed a few shots but got it in the end.
+**1st step** ✅: I got to deploy it in an EC2 instance! Had some trouble as the free t2.micro intance only has 1GB of RAM so we can't use big models and Pytorch has to be installed without caching.
+Also configuring gunicorn and nginx to make it available on the public Internet needed a few shots but got it in the end.
 
-NEXT STEP:
+Next step:
 
-Learn more ways to serve it in AWS, probably using Lambda :)
+🔜Learn more ways to serve it in AWS, probably using Lambda :)
 
 
 ## Getting started
@@ -48,4 +47,7 @@ python -m app
 ```
 
 and if you navigate to [http://127.0.0.1:8000/](http://127.0.0.1:8000/) you'll be able write a sentence.
+
+## Acknowledgements
+[@alexmolas](https://github.com/alexmolas) for the idea in this blog and providing the code I used as a base: [A search engine in 80 lines](https://www.alexmolas.com/2024/02/05/a-search-engine-in-80-lines.html)
 
