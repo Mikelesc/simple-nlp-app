@@ -5,7 +5,23 @@ from fastapi.templating import Jinja2Templates
 from uvicorn import run
 from models import SentimentModel
 
-app = FastAPI()
+from mangum import Mangum
+from dotenv import load_dotenv
+from fastapi.middleware.cors import CORSMiddleware
+
+import os
+
+load_dotenv()
+root_path = os.getenv('ENV', default='')
+
+app = FastAPI(root_path=f'/{root_path}')
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=['*'],
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 sentiment_model = SentimentModel()
 sentiment_model.load_model()
 templates = Jinja2Templates(directory="templates")
@@ -33,6 +49,8 @@ def analysis(request: Request, input_sentence: str = Form(...)):
 def read_about(request: Request):
     return templates.TemplateResponse("about.html", {"request": request})
 
+# The magic that allows the integration with AWS Lambda
+handler = Mangum(app)
 
 if __name__ == "__main__":
     run(app, host="0.0.0.0", port=8000)

@@ -3,7 +3,7 @@
 The purpose of this repository is to learn more about deploying a machine learning service in a public cloud provider.
 I built a simple sentiment analysis app using FastAPI and a HuggingFace basic model.
 
-**1st step, EC2** ✅: I got to deploy it in an EC2 instance! Had some trouble as the free t2.micro intance only has 1GB of RAM so we can't use big models and Pytorch has to be installed without caching.
+**1st step, EC2** ✅: I got to deploy it in an EC2 instance! Had some trouble as the free t2.micro intance only has 1GB of RAM, so we can't use big models, and Pytorch has to be installed without caching.
 Also configuring gunicorn and nginx to make it available on the public Internet needed a few shots but got it in the end.
 
 **Next step:**
